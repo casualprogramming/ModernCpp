@@ -14,14 +14,19 @@ public:
 	MyString(const char* str);
 
 	// 복사 생성자
+	//비고 : 생성자기때문에
 	MyString(const MyString& str);
 
 	// 이동 생성자
+	//장점 : 메모리 복사x 주소값만 복사
 	MyString(MyString&& str);
+	//이동 연산자
 	MyString& operator=(MyString&& s);
 
 	void reserve(int size);
 	MyString operator+(const MyString& s);
+	// 할당 연산자
+	// 복사 생성자랑 비교해서 기존의 데이터를 없애는 단계가 추가
 	MyString& operator=(const MyString& s);
 	~MyString();
 
@@ -108,6 +113,7 @@ MyString& MyString::operator=(const MyString& s) {
 
 MyString& MyString::operator=(MyString&& s) {
 	std::cout << "이동!" << std::endl;
+	//?? 있던거 지우는코드??
 	string_content = s.string_content;
 	memory_capacity = s.memory_capacity;
 	string_length = s.string_length;
