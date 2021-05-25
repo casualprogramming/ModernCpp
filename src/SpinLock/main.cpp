@@ -1,5 +1,5 @@
 /*
- *	This code is intended to help you understand.
+ *	This code is intended to help you understand the lock algorithm.
  *	it is better to use the spinlock library or stl recommended functions.
  */
 
